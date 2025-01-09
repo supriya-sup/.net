@@ -1,0 +1,31 @@
+using System;
+
+namespace CheckEvenOrOdd
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Display a welcome message
+            Console.WriteLine("Welcome to the Even or Odd Checker!");
+
+            // Prompt the user to enter a number
+            Console.Write("Enter a number: ");
+            int number = Convert.ToInt32(Console.ReadLine());
+
+            // Check if the number is even or odd
+            if (number % 2 == 0)
+            {
+                Console.WriteLine($"The number {number} is Even.");
+            }
+            else
+            {
+                Console.WriteLine($"The number {number} is Odd.");
+            }
+
+            // End the program
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
+        }
+    }
+}

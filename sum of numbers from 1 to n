@@ -1,0 +1,39 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Ask the user to enter a number
+        Console.WriteLine("Enter a positive integer:");
+
+        // Read the user input and convert it to an integer
+        if (int.TryParse(Console.ReadLine(), out int n))
+        {
+            if (n < 1)
+            {
+                Console.WriteLine("Please enter a positive integer.");
+            }
+            else
+            {
+                // Calculate the sum from 1 to n using a simple loop
+                int sum = 0;
+                for (int i = 1; i <= n; i++)
+                {
+                    sum += i;
+                }
+
+                // Display the result
+                Console.WriteLine($"The sum of numbers from 1 to {n} is: {sum}");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Invalid input. Please enter a valid integer.");
+        }
+
+        // Wait for the user to press a key before closing
+        Console.WriteLine("Press any key to exit...");
+        Console.ReadKey();
+    }
+}

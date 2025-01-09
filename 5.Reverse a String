@@ -1,0 +1,31 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Ask the user to enter a string
+        Console.Write("Enter a string to reverse: ");
+        
+        // Read the user's input
+        string input = Console.ReadLine();
+        
+        // Reverse the string using a simple method
+        string reversed = ReverseString(input);
+        
+        // Display the reversed string
+        Console.WriteLine($"Reversed string: {reversed}");
+        
+        // Wait for the user to press a key before closing
+        Console.WriteLine("Press any key to exit...");
+        Console.ReadKey();
+    }
+
+    // Method to reverse a string
+    static string ReverseString(string str)
+    {
+        char[] charArray = str.ToCharArray(); // Convert the string to a character array
+        Array.Reverse(charArray); // Reverse the array
+        return new string(charArray); // Convert the array back to a string and return it
+    }
+}

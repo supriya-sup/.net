@@ -1,0 +1,44 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Ask the user to enter a string
+        Console.Write("Enter a string: ");
+        
+        // Read the user's input
+        string input = Console.ReadLine();
+        
+        // Count the vowels in the string
+        int vowelCount = CountVowels(input);
+        
+        // Display the result
+        Console.WriteLine($"The number of vowels in the string is: {vowelCount}");
+        
+        // Wait for the user to press a key before closing
+        Console.WriteLine("Press any key to exit...");
+        Console.ReadKey();
+    }
+
+    // Method to count vowels in a string
+    static int CountVowels(string str)
+    {
+        int count = 0;
+        
+        // Convert the string to lowercase to make it case-insensitive
+        str = str.ToLower();
+
+        // Loop through each character in the string
+        foreach (char c in str)
+        {
+            // Check if the character is a vowel
+            if ("aeiou".Contains(c))
+            {
+                count++;
+            }
+        }
+
+        return count;
+    }
+}

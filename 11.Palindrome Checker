@@ -1,0 +1,39 @@
+using System;
+
+namespace PalindromeChecker
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Display a welcome message
+            Console.WriteLine("Welcome to the Palindrome Checker!");
+
+            // Prompt the user to enter a string
+            Console.Write("Enter a string to check if it's a palindrome: ");
+            string input = Console.ReadLine();
+
+            // Remove spaces and convert to lowercase for accurate comparison
+            string processedInput = input.Replace(" ", "").ToLower();
+
+            // Reverse the string
+            char[] charArray = processedInput.ToCharArray();
+            Array.Reverse(charArray);
+            string reversedInput = new string(charArray);
+
+            // Check if the input is a palindrome
+            if (processedInput == reversedInput)
+            {
+                Console.WriteLine($"\"{input}\" is a Palindrome!");
+            }
+            else
+            {
+                Console.WriteLine($"\"{input}\" is NOT a Palindrome.");
+            }
+
+            // End the program
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
+        }
+    }
+}

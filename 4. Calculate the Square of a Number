@@ -1,0 +1,28 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Ask the user to enter a number
+        Console.Write("Enter a number to find its square: ");
+        
+        // Read and parse the user's input
+        if (double.TryParse(Console.ReadLine(), out double number))
+        {
+            // Calculate the square of the number
+            double square = number * number;
+            
+            // Display the result
+            Console.WriteLine($"The square of {number} is {square}.");
+        }
+        else
+        {
+            Console.WriteLine("Invalid input. Please enter a valid number.");
+        }
+
+        // Wait for the user to press a key before closing
+        Console.WriteLine("Press any key to exit...");
+        Console.ReadKey();
+    }
+}

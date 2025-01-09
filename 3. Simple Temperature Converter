@@ -1,0 +1,60 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Display the menu
+        Console.WriteLine("Welcome to the Temperature Converter!");
+        Console.WriteLine("Choose the conversion type:");
+        Console.WriteLine("1. Celsius to Fahrenheit");
+        Console.WriteLine("2. Fahrenheit to Celsius");
+        Console.Write("Enter your choice (1 or 2): ");
+
+        // Read user's choice
+        if (int.TryParse(Console.ReadLine(), out int choice))
+        {
+            // Based on the user's choice, handle the conversion
+            if (choice == 1)
+            {
+                // Celsius to Fahrenheit
+                Console.Write("Enter temperature in Celsius: ");
+                if (double.TryParse(Console.ReadLine(), out double celsius))
+                {
+                    double fahrenheit = (celsius * 9 / 5) + 32;
+                    Console.WriteLine($"{celsius}°C is equal to {fahrenheit}°F");
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid number.");
+                }
+            }
+            else if (choice == 2)
+            {
+                // Fahrenheit to Celsius
+                Console.Write("Enter temperature in Fahrenheit: ");
+                if (double.TryParse(Console.ReadLine(), out double fahrenheit))
+                {
+                    double celsius = (fahrenheit - 32) * 5 / 9;
+                    Console.WriteLine($"{fahrenheit}°F is equal to {celsius}°C");
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid number.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice. Please choose either 1 or 2.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Invalid input. Please enter a valid number for your choice.");
+        }
+
+        // Wait for the user to press a key before closing
+        Console.WriteLine("Press any key to exit...");
+        Console.ReadKey();
+    }
+}

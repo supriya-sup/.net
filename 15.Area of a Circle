@@ -1,0 +1,24 @@
+using System;
+
+namespace CircleAreaCalculator
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Prompt the user to enter the radius
+            Console.Write("Enter the radius of the circle: ");
+            double radius = Convert.ToDouble(Console.ReadLine());
+
+            // Calculate the area of the circle
+            double area = Math.PI * Math.Pow(radius, 2);
+
+            // Display the result
+            Console.WriteLine($"The area of a circle with radius {radius} is: {area:F2}");
+
+            // End the program
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
+        }
+    }
+}

@@ -1,0 +1,42 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Ask the user to enter a number
+        Console.Write("Enter a number to calculate its factorial: ");
+        
+        // Read the user's input and parse it
+        if (int.TryParse(Console.ReadLine(), out int number))
+        {
+            // Calculate the factorial using a simple method
+            long factorial = CalculateFactorial(number);
+            
+            // Display the result
+            Console.WriteLine($"The factorial of {number} is {factorial}.");
+        }
+        else
+        {
+            Console.WriteLine("Invalid input. Please enter a valid integer.");
+        }
+
+        // Wait for the user to press a key before closing
+        Console.WriteLine("Press any key to exit...");
+        Console.ReadKey();
+    }
+
+    // Method to calculate the factorial of a number
+    static long CalculateFactorial(int n)
+    {
+        long result = 1;
+        
+        // Multiply numbers from 1 to n
+        for (int i = 1; i <= n; i++)
+        {
+            result *= i;
+        }
+
+        return result;
+    }
+}

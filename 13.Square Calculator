@@ -1,0 +1,24 @@
+using System;
+
+namespace SquareCalculator
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Prompt the user for a number
+            Console.Write("Enter a number to calculate its square: ");
+            int number = Convert.ToInt32(Console.ReadLine());
+
+            // Calculate the square
+            int square = number * number;
+
+            // Display the result
+            Console.WriteLine($"The square of {number} is: {square}");
+
+            // End the program
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
+        }
+    }
+}

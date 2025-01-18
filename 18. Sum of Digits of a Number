@@ -1,0 +1,29 @@
+Imports System
+
+Module Program
+    Sub Main()
+        ' Prompt the user for a number
+        Console.Write("Enter a number: ")
+        Dim num As Integer = Convert.ToInt32(Console.ReadLine())
+
+        ' Calculate the sum of digits
+        Dim sum As Integer = SumOfDigits(num)
+
+        ' Display the result
+        Console.WriteLine("The sum of digits of {0} is {1}.", num, sum)
+
+        ' Wait for user input before exiting
+        Console.WriteLine("Press any key to exit...")
+        Console.ReadKey()
+    End Sub
+
+    ' Function to calculate the sum of digits
+    Function SumOfDigits(ByVal n As Integer) As Integer
+        Dim sum As Integer = 0
+        While n > 0
+            sum += n Mod 10
+            n \= 10
+        End While
+        Return sum
+    End Function
+End Module

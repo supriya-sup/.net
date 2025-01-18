@@ -1,0 +1,15 @@
+Imports System
+
+Module Program
+    Sub Main()
+        Console.Write("Enter a number: ")
+        Dim num As Integer = Convert.ToInt32(Console.ReadLine())
+
+        Console.WriteLine("Factors are:")
+        For i As Integer = 1 To num
+            If num Mod i = 0 Then
+                Console.WriteLine(i)
+            End If
+        Next
+    End Sub
+End Module

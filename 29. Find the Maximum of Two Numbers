@@ -1,0 +1,11 @@
+Imports System
+Module Program
+    Sub Main()
+        Console.Write("Enter first number: ")
+        Dim num1 As Integer = Convert.ToInt32(Console.ReadLine())
+        Console.Write("Enter second number: ")
+        Dim num2 As Integer = Convert.ToInt32(Console.ReadLine())
+        Dim max As Integer = If(num1 > num2, num1, num2)
+        Console.WriteLine("The maximum number is: " & max)
+    End Sub
+End Module

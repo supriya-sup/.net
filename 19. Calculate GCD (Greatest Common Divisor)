@@ -1,0 +1,32 @@
+Imports System
+
+Module Program
+    Sub Main()
+        ' Prompt the user for two numbers
+        Console.Write("Enter the first number: ")
+        Dim num1 As Integer = Convert.ToInt32(Console.ReadLine())
+
+        Console.Write("Enter the second number: ")
+        Dim num2 As Integer = Convert.ToInt32(Console.ReadLine())
+
+        ' Calculate the GCD
+        Dim gcd As Integer = GCD(num1, num2)
+
+        ' Display the result
+        Console.WriteLine("The greatest common divisor of {0} and {1} is {2}.", num1, num2, gcd)
+
+        ' Wait for user input before exiting
+        Console.WriteLine("Press any key to exit...")
+        Console.ReadKey()
+    End Sub
+
+    ' Function to calculate GCD using the Euclidean algorithm
+    Function GCD(ByVal a As Integer, ByVal b As Integer) As Integer
+        While b <> 0
+            Dim temp As Integer = b
+            b = a Mod b
+            a = temp
+        End While
+        Return a
+    End Function
+End Module

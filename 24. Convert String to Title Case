@@ -1,0 +1,29 @@
+Imports System
+
+Module Program
+    Sub Main()
+        ' Prompt the user for a string
+        Console.Write("Enter a string: ")
+        Dim input As String = Console.ReadLine()
+
+        ' Convert the string to title case
+        Dim titleCase As String = ToTitleCase(input)
+
+        ' Display the result
+        Console.WriteLine("Title Case: {0}", titleCase)
+
+        ' Wait for user input before exiting
+        Console.WriteLine("Press any key to exit...")
+        Console.ReadKey()
+    End Sub
+
+    ' Function to convert string to title case
+    Function ToTitleCase(ByVal str As String) As String
+        Dim words As String() = str.Split(" "c)
+        For i As Integer = 0 To words.Length - 1
+            ' Capitalize the first letter and make the rest lowercase
+            words(i) = Char.ToUpper(words(i)(0)) & words(i).Substring(1).ToLower()
+        Next
+        Return String.Join(" ", words)
+    End Function
+End Module

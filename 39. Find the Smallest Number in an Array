@@ -1,0 +1,17 @@
+Imports System
+
+Module Program
+    Sub Main()
+        Console.Write("Enter the size of the array: ")
+        Dim size As Integer = Convert.ToInt32(Console.ReadLine())
+        Dim arr(size - 1) As Integer
+
+        For i As Integer = 0 To size - 1
+            Console.Write($"Enter element {i + 1}: ")
+            arr(i) = Convert.ToInt32(Console.ReadLine())
+        Next
+
+        Dim smallest As Integer = arr.Min()
+        Console.WriteLine($"The smallest number is: {smallest}")
+    End Sub
+End Module

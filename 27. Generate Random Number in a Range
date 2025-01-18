@@ -1,0 +1,29 @@
+Imports System
+
+Module Program
+    Sub Main()
+        ' Prompt the user for the minimum value
+        Console.Write("Enter the minimum value: ")
+        Dim min As Integer = Convert.ToInt32(Console.ReadLine())
+
+        ' Prompt the user for the maximum value
+        Console.Write("Enter the maximum value: ")
+        Dim max As Integer = Convert.ToInt32(Console.ReadLine())
+
+        ' Generate a random number within the range
+        Dim randomNumber As Integer = GenerateRandom(min, max)
+
+        ' Display the random number
+        Console.WriteLine("Random number between {0} and {1}: {2}", min, max, randomNumber)
+
+        ' Wait for user input before exiting
+        Console.WriteLine("Press any key to exit...")
+        Console.ReadKey()
+    End Sub
+
+    ' Function to generate a random number in a range
+    Function GenerateRandom(ByVal min As Integer, ByVal max As Integer) As Integer
+        Dim rand As New Random()
+        Return rand.Next(min, max + 1)
+    End Function
+End Module

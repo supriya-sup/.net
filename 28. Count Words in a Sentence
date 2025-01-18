@@ -1,0 +1,25 @@
+Imports System
+
+Module Program
+    Sub Main()
+        ' Prompt the user for a sentence
+        Console.Write("Enter a sentence to count the number of words: ")
+        Dim sentence As String = Console.ReadLine()
+
+        ' Count the words in the sentence
+        Dim wordCount As Integer = CountWords(sentence)
+
+        ' Display the result
+        Console.WriteLine("The number of words in the sentence is: {0}", wordCount)
+
+        ' Wait for user input before exiting
+        Console.WriteLine("Press any key to exit...")
+        Console.ReadKey()
+    End Sub
+
+    ' Function to count the number of words in a sentence
+    Function CountWords(ByVal sentence As String) As Integer
+        Dim words As String() = sentence.Split(New Char() {" "c}, StringSplitOptions.RemoveEmptyEntries)
+        Return words.Length
+    End Function
+End Module

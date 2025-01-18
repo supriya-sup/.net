@@ -1,0 +1,33 @@
+Imports System
+
+Module Program
+    Sub Main()
+        ' Prompt the user for a string
+        Console.Write("Enter a string: ")
+        Dim input As String = Console.ReadLine()
+
+        ' Shuffle the letters of the string
+        Dim shuffled As String = ShuffleString(input)
+
+        ' Display the shuffled string
+        Console.WriteLine("Shuffled string: {0}", shuffled)
+
+        ' Wait for user input before exiting
+        Console.WriteLine("Press any key to exit...")
+        Console.ReadKey()
+    End Sub
+
+    ' Function to shuffle the letters of a string
+    Function ShuffleString(ByVal str As String) As String
+        Dim rand As New Random()
+        Dim charArray As Char() = str.ToCharArray()
+        For i As Integer = 0 To charArray.Length - 1
+            ' Swap each character with a random character from the array
+            Dim j As Integer = rand.Next(0, charArray.Length)
+            Dim temp As Char = charArray(i)
+            charArray(i) = charArray(j)
+            charArray(j) = temp
+        Next
+        Return New String(charArray)
+    End Function
+End Module

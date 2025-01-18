@@ -1,0 +1,40 @@
+Imports System
+
+Module Program
+    Sub Main()
+        ' Prompt the user for the number of elements
+        Console.Write("Enter the number of elements in the array: ")
+        Dim n As Integer = Convert.ToInt32(Console.ReadLine())
+
+        ' Declare the array
+        Dim numbers(n - 1) As Integer
+
+        ' Populate the array with user input
+        Console.WriteLine("Enter the elements of the array:")
+        For i As Integer = 0 To n - 1
+            Console.Write("Element {0}: ", i + 1)
+            numbers(i) = Convert.ToInt32(Console.ReadLine())
+        Next
+
+        ' Find the largest number
+        Dim largest As Integer = FindLargest(numbers)
+
+        ' Display the result
+        Console.WriteLine("The largest number in the array is: {0}", largest)
+
+        ' Wait for user input before exiting
+        Console.WriteLine("Press any key to exit...")
+        Console.ReadKey()
+    End Sub
+
+    ' Function to find the largest number in an array
+    Function FindLargest(ByVal arr As Integer()) As Integer
+        Dim max As Integer = arr(0)
+        For Each num In arr
+            If num > max Then
+                max = num
+            End If
+        Next
+        Return max
+    End Function
+End Module

@@ -1,0 +1,30 @@
+Imports System
+
+Module Program
+    Sub Main()
+        ' Prompt the user for a number
+        Console.Write("Enter a number: ")
+        Dim num As Integer = Convert.ToInt32(Console.ReadLine())
+
+        ' Reverse the digits of the number
+        Dim reversed As Integer = ReverseNumber(num)
+
+        ' Display the result
+        Console.WriteLine("The reversed number is: {0}", reversed)
+
+        ' Wait for user input before exiting
+        Console.WriteLine("Press any key to exit...")
+        Console.ReadKey()
+    End Sub
+
+    ' Function to reverse the digits of a number
+    Function ReverseNumber(ByVal n As Integer) As Integer
+        Dim reversed As Integer = 0
+        While n <> 0
+            Dim digit As Integer = n Mod 10
+            reversed = reversed * 10 + digit
+            n \= 10
+        End While
+        Return reversed
+    End Function
+End Module

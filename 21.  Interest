@@ -1,0 +1,25 @@
+Imports System
+
+Module Program
+    Sub Main()
+        ' Prompt the user for principal, rate, and time
+        Console.Write("Enter the principal amount: ")
+        Dim principal As Double = Convert.ToDouble(Console.ReadLine())
+
+        Console.Write("Enter the rate of interest: ")
+        Dim rate As Double = Convert.ToDouble(Console.ReadLine())
+
+        Console.Write("Enter the time period (in years): ")
+        Dim time As Double = Convert.ToDouble(Console.ReadLine())
+
+        ' Calculate the simple interest
+        Dim simpleInterest As Double = (principal * rate * time) / 100
+
+        ' Display the result
+        Console.WriteLine("The simple interest is {0}.", simpleInterest)
+
+        ' Wait for user input before exiting
+        Console.WriteLine("Press any key to exit...")
+        Console.ReadKey()
+    End Sub
+End Module

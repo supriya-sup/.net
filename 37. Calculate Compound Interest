@@ -1,0 +1,17 @@
+Imports System
+
+Module Program
+    Sub Main()
+        Console.Write("Enter principal amount: ")
+        Dim principal As Double = Convert.ToDouble(Console.ReadLine())
+        Console.Write("Enter annual interest rate (in %): ")
+        Dim rate As Double = Convert.ToDouble(Console.ReadLine())
+        Console.Write("Enter time (in years): ")
+        Dim time As Double = Convert.ToDouble(Console.ReadLine())
+        Console.Write("Enter number of times interest applied per year: ")
+        Dim n As Integer = Convert.ToInt32(Console.ReadLine())
+
+        Dim amount As Double = principal * Math.Pow((1 + rate / (n * 100)), n * time)
+        Console.WriteLine($"Compound interest amount: {amount:F2}")
+    End Sub
+End Module

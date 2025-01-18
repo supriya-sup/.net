@@ -1,0 +1,22 @@
+Imports System
+
+Module Program
+    Sub Main()
+        Console.Write("Enter the number of elements: ")
+        Dim n As Integer = Convert.ToInt32(Console.ReadLine())
+        Dim positive As Integer = 0
+        Dim negative As Integer = 0
+
+        For i As Integer = 1 To n
+            Console.Write($"Enter number {i}: ")
+            Dim num As Integer = Convert.ToInt32(Console.ReadLine())
+            If num >= 0 Then
+                positive += 1
+            Else
+                negative += 1
+            End If
+        Next
+
+        Console.WriteLine($"Positive numbers: {positive}, Negative numbers: {negative}")
+    End Sub
+End Module

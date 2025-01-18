@@ -1,0 +1,22 @@
+Imports System
+
+Module Program
+    Sub Main()
+        ' Prompt the user for the width and height of the rectangle
+        Console.Write("Enter the width of the rectangle: ")
+        Dim width As Double = Convert.ToDouble(Console.ReadLine())
+
+        Console.Write("Enter the height of the rectangle: ")
+        Dim height As Double = Convert.ToDouble(Console.ReadLine())
+
+        ' Calculate the perimeter of the rectangle
+        Dim perimeter As Double = 2 * (width + height)
+
+        ' Display the result
+        Console.WriteLine("The perimeter of the rectangle is {0}.", perimeter)
+
+        ' Wait for user input before exiting
+        Console.WriteLine("Press any key to exit...")
+        Console.ReadKey()
+    End Sub
+End Module

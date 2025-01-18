@@ -1,0 +1,21 @@
+Imports System
+
+Module Program
+    Sub Main()
+        Console.Write("Enter a number: ")
+        Dim num As Integer = Convert.ToInt32(Console.ReadLine())
+        Dim sum As Integer = 0
+
+        For i As Integer = 1 To num \ 2
+            If num Mod i = 0 Then
+                sum += i
+            End If
+        Next
+
+        If sum = num Then
+            Console.WriteLine($"{num} is a perfect number.")
+        Else
+            Console.WriteLine($"{num} is not a perfect number.")
+        End If
+    End Sub
+End Module

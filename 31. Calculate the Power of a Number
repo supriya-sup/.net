@@ -1,0 +1,13 @@
+Imports System
+
+Module Program
+    Sub Main()
+        Console.Write("Enter the base number: ")
+        Dim baseNum As Integer = Convert.ToInt32(Console.ReadLine())
+        Console.Write("Enter the exponent: ")
+        Dim exponent As Integer = Convert.ToInt32(Console.ReadLine())
+        
+        Dim result As Integer = Math.Pow(baseNum, exponent)
+        Console.WriteLine($"{baseNum} raised to the power of {exponent} is: {result}")
+    End Sub
+End Module

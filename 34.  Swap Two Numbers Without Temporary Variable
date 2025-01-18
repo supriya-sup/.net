@@ -1,0 +1,16 @@
+Imports System
+
+Module Program
+    Sub Main()
+        Console.Write("Enter the first number: ")
+        Dim num1 As Integer = Convert.ToInt32(Console.ReadLine())
+        Console.Write("Enter the second number: ")
+        Dim num2 As Integer = Convert.ToInt32(Console.ReadLine())
+
+        num1 = num1 + num2
+        num2 = num1 - num2
+        num1 = num1 - num2
+
+        Console.WriteLine($"After swapping: num1 = {num1}, num2 = {num2}")
+    End Sub
+End Module

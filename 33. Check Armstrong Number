@@ -1,0 +1,22 @@
+Imports System
+
+Module Program
+    Sub Main()
+        Console.Write("Enter a number: ")
+        Dim num As Integer = Convert.ToInt32(Console.ReadLine())
+        Dim sum As Integer = 0
+        Dim temp As Integer = num
+
+        While temp > 0
+            Dim digit As Integer = temp Mod 10
+            sum += Math.Pow(digit, 3)
+            temp \= 10
+        End While
+
+        If sum = num Then
+            Console.WriteLine($"{num} is an Armstrong number.")
+        Else
+            Console.WriteLine($"{num} is not an Armstrong number.")
+        End If
+    End Sub
+End Module

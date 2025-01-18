@@ -1,0 +1,11 @@
+Imports System
+
+Module Program
+    Sub Main()
+        Console.Write("Enter a binary number: ")
+        Dim binary As String = Console.ReadLine()
+        Dim decimalValue As Integer = Convert.ToInt32(binary, 2)
+
+        Console.WriteLine($"The decimal value is: {decimalValue}")
+    End Sub
+End Module

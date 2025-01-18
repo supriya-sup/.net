@@ -1,0 +1,17 @@
+Imports System
+
+Module Program
+    Sub Main()
+        Console.Write("Enter the number of elements: ")
+        Dim n As Integer = Convert.ToInt32(Console.ReadLine())
+        Dim sum As Integer = 0
+
+        For i As Integer = 1 To n
+            Console.Write($"Enter number {i}: ")
+            sum += Convert.ToInt32(Console.ReadLine())
+        Next
+
+        Dim average As Double = sum / n
+        Console.WriteLine($"The average is: {average}")
+    End Sub
+End Module

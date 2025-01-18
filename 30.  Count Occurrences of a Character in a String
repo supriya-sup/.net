@@ -1,0 +1,19 @@
+Imports System
+
+Module Program
+    Sub Main()
+        Console.Write("Enter a string: ")
+        Dim input As String = Console.ReadLine()
+        Console.Write("Enter character to count: ")
+        Dim charToCount As Char = Console.ReadLine()(0)
+
+        Dim count As Integer = 0
+        For Each ch As Char In input
+            If ch = charToCount Then
+                count += 1
+            End If
+        Next
+
+        Console.WriteLine("The character '" & charToCount & "' appears " & count & " times.")
+    End Sub
+End Module

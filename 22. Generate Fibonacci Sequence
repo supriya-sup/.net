@@ -1,0 +1,33 @@
+Imports System
+
+Module Program
+    Sub Main()
+        ' Prompt the user for the number of terms in the Fibonacci sequence
+        Console.Write("Enter the number of terms: ")
+        Dim terms As Integer = Convert.ToInt32(Console.ReadLine())
+
+        ' Generate the Fibonacci sequence
+        Console.WriteLine("Fibonacci sequence up to {0} terms:", terms)
+        GenerateFibonacci(terms)
+
+        ' Wait for user input before exiting
+        Console.WriteLine("Press any key to exit...")
+        Console.ReadKey()
+    End Sub
+
+    ' Function to generate and display Fibonacci sequence
+    Sub GenerateFibonacci(ByVal terms As Integer)
+        Dim first As Integer = 0
+        Dim second As Integer = 1
+        Dim nextTerm As Integer
+
+        For i As Integer = 1 To terms
+            Console.Write(first & " ")
+
+            nextTerm = first + second
+            first = second
+            second = nextTerm
+        Next
+        Console.WriteLine() ' Move to the next line after the sequence
+    End Sub
+End Module

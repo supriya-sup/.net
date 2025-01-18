@@ -1,0 +1,16 @@
+Imports System
+
+Module Program
+    Sub Main()
+        ' Prompt the user for their name
+        Console.Write("Enter your name: ")
+        Dim name As String = Console.ReadLine()
+
+        ' Display a greeting message
+        Console.WriteLine("Hello, " & name & "! Welcome to VB.NET.")
+
+        ' Wait for user input before exiting
+        Console.WriteLine("Press any key to exit...")
+        Console.ReadKey()
+    End Sub
+End Module
